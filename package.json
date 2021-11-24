@@ -1,0 +1,21 @@
+{
+  "name": "trades-server",
+  "version": "1.0.0",
+  "description": "server for get/set of personal trading data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Luyang Gai",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "koa": "^2.13.4",
+    "koa-body": "^4.2.0",
+    "koa-logger": "^3.2.1",
+    "mongodb": "^4.2.0",
+    "mongoose": "^6.0.13",
+    "nodemon": "^2.0.15"
+  }
+}
