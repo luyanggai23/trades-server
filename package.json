@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start:dev": "nodemon index.js",
+    "start": "pm2 start index.js",
+    "start:docker": "pm2-docker index.js"
   },
   "author": "Luyang Gai",
   "license": "ISC",
@@ -13,9 +15,12 @@
     "@koa/router": "^10.1.1",
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
+    "koa-bodyparser": "^4.3.0",
     "koa-logger": "^3.2.1",
     "mongodb": "^4.2.0",
     "mongoose": "^6.0.13",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "pm2": "^5.1.2",
+    "pm2-docker": "^2.1.0"
   }
 }

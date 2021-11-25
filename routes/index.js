@@ -1,3 +1,3 @@
 module.exports = (router) => {
-    require('./trades')(router);
+  require('./trades')(router);
 }
