@@ -11,6 +11,7 @@ Routes(router);
 
 async function connectToMongo() {
   try {
+    console.log('attempting to connect to mongo...')
     await Mongoose.connect(`mongodb://${process.env.mongoHost || 'localhost'}:27017/trades`);
     console.log('mongo connected successfully');
   } catch (error) {
@@ -26,9 +27,6 @@ Mongoose.connection.on('error', error => {
 
 app
   .use(bodyParser())
-  .use(logger((str, args) => {
-    console.log('str: ', str);
-    console.log('args: ', args);
-  }))
+  .use(logger())
   .use(router.routes())
   .listen(3000);

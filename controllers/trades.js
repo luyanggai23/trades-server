@@ -3,7 +3,6 @@ const Trade = require('../models/trade');
 let controller = {
   create: async (ctx) => {
     try {
-      // console.log('ctx.request.body: ', ctx.request.body);
       let trade = new Trade({
         ...ctx.request.body
       });
@@ -11,13 +10,17 @@ let controller = {
       ctx.body = trade;
       ctx.status = 201;
     } catch (err) {
-      // console.log('error: ', err);
       ctx.throw(400, err);
     }
   },
   list: async (ctx) => {
-    const trades = await Trade.find({}).exec();
-    ctx.body = trades;
+    try {
+      const trades = await Trade.find({...ctx.request.query}).exec();
+      ctx.body = trades;
+    } catch (err) {
+      ctx.throw(400, err);
+    }
+   
   }
 }
 

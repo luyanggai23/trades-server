@@ -36,14 +36,19 @@ const tradeSchema = new Mongoose.Schema({
 //   transactionTotalAmount: Number
 // });
 
-tradeSchema.index({
-  settlementDate: 1,
-  stockSymbol: 2,
-  action: 3,
-  stockQuantityExchanged: 4,
-  stockPrice: 5,
-  transactionTotalAmount: 6
-})
+tradeSchema.index(
+  {
+    settlementDate: 1,
+    stockSymbol: 1,
+    action: 1,
+    stockQuantityExchanged: 1,
+    stockPrice: 1,
+    transactionTotalAmount: 1,
+  },
+  {
+    unique: true
+  }
+)
 
 Mongoose.model('Trade', tradeSchema);
 
