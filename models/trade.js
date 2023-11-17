@@ -27,15 +27,6 @@ const tradeSchema = new Mongoose.Schema({
   }
 });
 
-// const tradeSchema = new Mongoose.Schema({
-//   settlementDate:  Date,
-//   stockSymbol:  String,
-//   action: String,
-//   stockQuantityExchanged: Number,
-//   stockPrice: Number,
-//   transactionTotalAmount: Number
-// });
-
 tradeSchema.index(
   {
     settlementDate: 1,

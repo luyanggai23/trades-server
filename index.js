@@ -4,6 +4,7 @@ const Router = require('@koa/router');
 const bodyParser = require('koa-bodyparser');
 const Routes = require('./routes');
 const Mongoose = require('mongoose');
+const cors = require('@koa/cors');
 
 const app = module.exports = new Koa();
 const router = new Router();
@@ -29,4 +30,7 @@ app
   .use(bodyParser())
   .use(logger())
   .use(router.routes())
+  .use(cors({
+    origin: 'localhost:3001'
+  }))
   .listen(3000);
